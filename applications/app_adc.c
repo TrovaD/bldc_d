@@ -355,7 +355,10 @@ static THD_FUNCTION(adc_thread, arg) {
 
 		case ADC_CTRL_TYPE_CURRENT_NOREV_BRAKE_ADC:
 		case ADC_CTRL_TYPE_CURRENT_REV_BUTTON_BRAKE_ADC:
-			pwr -= brake;
+			if (brake != 0.0) {
+   			 // Set the motor to the corresponding braking power
+    			pwr = -brake; // Adjust the scaling factor as needed
+			}
 			break;
 
 		case ADC_CTRL_TYPE_CURRENT_REV_BUTTON:
