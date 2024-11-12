@@ -114,10 +114,10 @@
 #define MCCONF_L_LIM_TEMP_ACCEL_DEC		0.15	// Decrease temperature limits this much during acceleration
 #endif
 #ifndef MCCONF_L_WATT_MAX
-#define MCCONF_L_WATT_MAX				1500000.0	// Maximum wattage output
+#define MCCONF_L_WATT_MAX				100.0	// Maximum wattage output
 #endif
 #ifndef MCCONF_L_WATT_MIN
-#define MCCONF_L_WATT_MIN				-1500000.0	// Minimum wattage output (braking)
+#define MCCONF_L_WATT_MIN				-1000.0	// Minimum wattage output (braking)
 #endif
 #ifndef MCCONF_L_CURRENT_MAX_SCALE
 #define MCCONF_L_CURRENT_MAX_SCALE		1.0	// Maximum current scale
@@ -254,10 +254,10 @@
 
 // FOC
 #ifndef MCCONF_FOC_CURRENT_KP
-#define MCCONF_FOC_CURRENT_KP			0.03
+#define MCCONF_FOC_CURRENT_KP			0.0123
 #endif
 #ifndef MCCONF_FOC_CURRENT_KI
-#define MCCONF_FOC_CURRENT_KI			50.0
+#define MCCONF_FOC_CURRENT_KI			11.85
 #endif
 #ifndef MCCONF_FOC_F_ZV
 #define MCCONF_FOC_F_ZV					25000.0
@@ -284,19 +284,19 @@
 #define MCCONF_FOC_PLL_KI				30000.0
 #endif
 #ifndef MCCONF_FOC_MOTOR_L
-#define MCCONF_FOC_MOTOR_L				0.000007
+#define MCCONF_FOC_MOTOR_L				0.001227
 #endif
 #ifndef MCCONF_FOC_MOTOR_R
-#define MCCONF_FOC_MOTOR_R				0.015
+#define MCCONF_FOC_MOTOR_R				0.0118
 #endif
 #ifndef MCCONF_FOC_MOTOR_FLUX_LINKAGE
-#define MCCONF_FOC_MOTOR_FLUX_LINKAGE	0.00245
+#define MCCONF_FOC_MOTOR_FLUX_LINKAGE	0.004014
 #endif
 #ifndef MCCONF_FOC_MOTOR_LD_LQ_DIFF
-#define MCCONF_FOC_MOTOR_LD_LQ_DIFF		0.0
+#define MCCONF_FOC_MOTOR_LD_LQ_DIFF		0.00377
 #endif
 #ifndef MCCONF_FOC_OBSERVER_GAIN
-#define MCCONF_FOC_OBSERVER_GAIN		9e7		// Can be something like 600 / L
+#define MCCONF_FOC_OBSERVER_GAIN		62.06e6		// Can be something like 600 / L
 #endif
 #ifndef MCCONF_FOC_OBSERVER_GAIN_SLOW
 #define MCCONF_FOC_OBSERVER_GAIN_SLOW	0.05	// Observer gain scale at minimum duty cycle
@@ -596,16 +596,16 @@
 #define MCCONF_SI_MOTOR_POLES			14 // Motor pole count
 #endif
 #ifndef MCCONF_SI_GEAR_RATIO
-#define MCCONF_SI_GEAR_RATIO			3 // Gear ratio
+#define MCCONF_SI_GEAR_RATIO			20 // Gear ratio
 #endif
 #ifndef MCCONF_SI_WHEEL_DIAMETER
-#define MCCONF_SI_WHEEL_DIAMETER		0.083 // Wheel Diameter
+#define MCCONF_SI_WHEEL_DIAMETER		0.7 // Wheel Diameter
 #endif
 #ifndef MCCONF_SI_BATTERY_TYPE
 #define MCCONF_SI_BATTERY_TYPE			BATTERY_TYPE_LIION_3_0__4_2 // Battery Type
 #endif
 #ifndef MCCONF_SI_BATTERY_CELLS
-#define MCCONF_SI_BATTERY_CELLS			3 // Battery Cells
+#define MCCONF_SI_BATTERY_CELLS			10 // Battery Cells
 #endif
 #ifndef MCCONF_SI_BATTERY_AH
 #define MCCONF_SI_BATTERY_AH			6.0 // Battery amp hours
