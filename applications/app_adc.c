@@ -69,7 +69,6 @@ static volatile bool buttons_detached = false;
 static volatile bool rev_override = false;
 static volatile bool cc_override = false;
 static volatile bool range_ok = true;
-static volatile float base_recuperation = 0.1;
 
 void app_adc_configure(adc_config *conf) {
 	if (!buttons_detached && (((conf->buttons >> 0) & 1) || CTRL_USES_BUTTON(conf->ctrl_type))) {
@@ -395,9 +394,6 @@ static THD_FUNCTION(adc_thread, arg) {
 		}
 
 		float current_rel = 0.0;
-		if (!app_pas_is_running() && decoded_level2 < 0.01) {
-   		 current_rel *= base_recuperation;
-		}
 		bool current_mode = false;
 		bool current_mode_brake = false;
 		const volatile mc_configuration *mcconf = mc_interface_get_configuration();
