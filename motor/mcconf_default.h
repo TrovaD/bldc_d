@@ -39,7 +39,7 @@
 #define MCCONF_L_CURRENT_MAX			60.0	// Current limit in Amperes (Upper)
 #endif
 #ifndef MCCONF_L_CURRENT_MIN
-#define MCCONF_L_CURRENT_MIN			-60.0	// Current limit in Amperes (Lower)
+#define MCCONF_L_CURRENT_MIN			-90.0	// Current limit in Amperes (Lower)
 #endif
 #ifndef MCCONF_L_IN_CURRENT_MAX
 #define MCCONF_L_IN_CURRENT_MAX			99.0	// Input current limit in Amperes (Upper)
@@ -48,7 +48,7 @@
 #define MCCONF_L_IN_CURRENT_MIN			-60.0	// Input current limit in Amperes (Lower)
 #endif
 #ifndef MCCONF_L_IN_CURRENT_MAP_START
-#define MCCONF_L_IN_CURRENT_MAP_START	1.0		// Input current to Q axis current limit map start
+#define MCCONF_L_IN_CURRENT_MAP_START	.95		// Input current to Q axis current limit map start
 #endif
 #ifndef MCCONF_L_IN_CURRENT_MAP_FILTER
 #define MCCONF_L_IN_CURRENT_MAP_FILTER	0.005	// Input current filter for the mapped limit
@@ -63,16 +63,16 @@
 #define MCCONF_L_MAX_VOLTAGE			57.0	// Maximum input voltage
 #endif
 #ifndef MCCONF_L_BATTERY_CUT_START
-#define MCCONF_L_BATTERY_CUT_START		10.0	// Start limiting the positive current at this voltage
+#define MCCONF_L_BATTERY_CUT_START		20.0	// Start limiting the positive current at this voltage
 #endif
 #ifndef MCCONF_L_BATTERY_CUT_END
-#define MCCONF_L_BATTERY_CUT_END		8.0		// Limit the positive current completely at this voltage
+#define MCCONF_L_BATTERY_CUT_END		15.0		// Limit the positive current completely at this voltage
 #endif
 #ifndef MCCONF_L_BATTERY_REGEN_CUT_START
-#define MCCONF_L_BATTERY_REGEN_CUT_START    1000.0	// Start limiting the regen current at this voltage
+#define MCCONF_L_BATTERY_REGEN_CUT_START    50.0	// Start limiting the regen current at this voltage
 #endif
 #ifndef MCCONF_L_BATTERY_REGEN_CUT_END
-#define MCCONF_L_BATTERY_REGEN_CUT_END  1100.0		// Limit the regen current completely at this voltage
+#define MCCONF_L_BATTERY_REGEN_CUT_END  60.0		// Limit the regen current completely at this voltage
 #endif
 #ifndef MCCONF_L_RPM_MAX
 #define MCCONF_L_RPM_MAX				100000.0	// The motor speed limit (Upper)
@@ -81,7 +81,7 @@
 #define MCCONF_L_RPM_MIN				-100000.0	// The motor speed limit (Lower)
 #endif
 #ifndef MCCONF_L_RPM_START
-#define MCCONF_L_RPM_START				0.8		// Fraction of full speed where RPM current limiting starts
+#define MCCONF_L_RPM_START				0.95		// Fraction of full speed where RPM current limiting starts
 #endif
 #ifndef MCCONF_L_SLOW_ABS_OVERCURRENT
 #define MCCONF_L_SLOW_ABS_OVERCURRENT	false	// Use the filtered (and hence slower) current for the overcurrent fault detection
@@ -114,7 +114,7 @@
 #define MCCONF_L_LIM_TEMP_ACCEL_DEC		0.15	// Decrease temperature limits this much during acceleration
 #endif
 #ifndef MCCONF_L_WATT_MAX
-#define MCCONF_L_WATT_MAX				100.0	// Maximum wattage output
+#define MCCONF_L_WATT_MAX				1000.0	// Maximum wattage output
 #endif
 #ifndef MCCONF_L_WATT_MIN
 #define MCCONF_L_WATT_MIN				-1000.0	// Minimum wattage output (braking)
@@ -254,10 +254,10 @@
 
 // FOC
 #ifndef MCCONF_FOC_CURRENT_KP
-#define MCCONF_FOC_CURRENT_KP			0.0123
+#define MCCONF_FOC_CURRENT_KP			0.0056
 #endif
 #ifndef MCCONF_FOC_CURRENT_KI
-#define MCCONF_FOC_CURRENT_KI			11.85
+#define MCCONF_FOC_CURRENT_KI			17.4
 #endif
 #ifndef MCCONF_FOC_F_ZV
 #define MCCONF_FOC_F_ZV					25000.0
@@ -284,19 +284,19 @@
 #define MCCONF_FOC_PLL_KI				30000.0
 #endif
 #ifndef MCCONF_FOC_MOTOR_L
-#define MCCONF_FOC_MOTOR_L				0.001227
+#define MCCONF_FOC_MOTOR_L				0.00564
 #endif
 #ifndef MCCONF_FOC_MOTOR_R
-#define MCCONF_FOC_MOTOR_R				0.0118
+#define MCCONF_FOC_MOTOR_R				0.0174
 #endif
 #ifndef MCCONF_FOC_MOTOR_FLUX_LINKAGE
-#define MCCONF_FOC_MOTOR_FLUX_LINKAGE	0.004014
+#define MCCONF_FOC_MOTOR_FLUX_LINKAGE	0.000769
 #endif
 #ifndef MCCONF_FOC_MOTOR_LD_LQ_DIFF
-#define MCCONF_FOC_MOTOR_LD_LQ_DIFF		0.00377
+#define MCCONF_FOC_MOTOR_LD_LQ_DIFF		0.00183
 #endif
 #ifndef MCCONF_FOC_OBSERVER_GAIN
-#define MCCONF_FOC_OBSERVER_GAIN		62.06e6		// Can be something like 600 / L
+#define MCCONF_FOC_OBSERVER_GAIN		1689e6		// Can be something like 600 / L
 #endif
 #ifndef MCCONF_FOC_OBSERVER_GAIN_SLOW
 #define MCCONF_FOC_OBSERVER_GAIN_SLOW	0.05	// Observer gain scale at minimum duty cycle
