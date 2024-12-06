@@ -650,7 +650,7 @@
 #define HW_PAS1_PORT			GPIOB
 #define HW_PAS1_PIN				6
 #define HW_PAS2_PORT			GPIOA
-#define HW_PAS2_PIN				6
+#define HW_PAS2_PIN				8
 #endif
 
 #ifndef HW_ICU_TIMER

@@ -77,8 +77,8 @@ void app_pas_configure(pas_config *conf) {
 	// a period longer than this should immediately reduce power to zero
 	max_pulse_period = 1.0 / ((config.pedal_rpm_start / 60.0) * config.magnets) * 1.2;
 
-	// if pedal spins at x3 the end rpm, assume its beyond limits
-	min_pedal_period = 1.0 / ((config.pedal_rpm_end * 3.0 / 60.0));
+	// if pedal spins at x4 the end rpm, assume its beyond limits
+	min_pedal_period = 1.0 / ((config.pedal_rpm_end * 4.0 / 60.0));
 
 	(config.invert_pedal_direction) ? (direction_conf = -1.0) : (direction_conf = 1.0);
 }
@@ -147,7 +147,7 @@ void pas_event_handler(void) {
 	static float inactivity_time = 0;
 	static float period_filtered = 0;
 	static int32_t correct_direction_counter = 0;
-	static uint8_t count = 0; // check if it ist needed -------------------------------------------------------
+	static uint8_t count = 0;
 
 	if(pas_one_sensor){
 		uint8_t	pas_level = palReadPad(HW_PAS1_PORT, HW_PAS1_PIN);
